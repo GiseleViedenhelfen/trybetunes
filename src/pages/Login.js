@@ -51,7 +51,7 @@ class Login extends Component {
             type="submit"
             data-testid="login-submit-button"
             disabled={ isButtonDisable }
-            onClick={ createUser }
+            onClick={ this.handleClick }
           >
             Entrar
           </button>
