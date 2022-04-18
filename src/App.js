@@ -7,6 +7,7 @@ import Album from './pages/Album';
 import Profile from './pages/Profile';
 import ProfileEdit from './pages/ProfileEdit';
 import NotFound from './pages/NotFound';
+import { Header } from 'node-fetch';
 
 class App extends React.Component {
   render() {
