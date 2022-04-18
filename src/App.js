@@ -7,14 +7,14 @@ import Album from './pages/Album';
 import Profile from './pages/Profile';
 import ProfileEdit from './pages/ProfileEdit';
 import NotFound from './pages/NotFound';
-import { Header } from 'node-fetch';
+// import { Header } from 'node-fetch';
 
 class App extends React.Component {
   render() {
     return (
       <section>
         <Route exact path="/" component={ Login } />
-        <Route path="/search" component={ Search } />
+        <Route exact path="/search" component={ Search } />
         <Route path="/album/:id" component={ Album } />
         <Route path="/favorites" component={ favorites } />
         <Route exact path="/profile" component={ Profile } />
