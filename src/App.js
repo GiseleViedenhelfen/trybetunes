@@ -7,7 +7,7 @@ import Album from './pages/Album';
 import Profile from './pages/Profile';
 import ProfileEdit from './pages/ProfileEdit';
 import NotFound from './pages/NotFound';
-// import { Header } from 'node-fetch';
+// import Header from './Components/Header';
 
 class App extends React.Component {
   render() {
@@ -19,6 +19,7 @@ class App extends React.Component {
         <Route path="/favorites" component={ favorites } />
         <Route exact path="/profile" component={ Profile } />
         <Route path="/profile/edit" component={ ProfileEdit } />
+
         <Route component={ NotFound } />
       </section>
     );
