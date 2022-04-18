@@ -1,3 +1,4 @@
+import { Redirect, Route } from 'react-router-dom';
 import { Component } from 'react/cjs/react.production.min';
 import { createUser } from '../services/userAPI';
 
@@ -9,7 +10,10 @@ class Login extends Component {
     this.state = {
       isButtonDisable: true,
       inputValue: '',
+      chamaApi: false,
+      logado: false,
     };
+    this.handleClick = this.handleClick.bind(this);
     this.handleInputValue = this.handleInputValue.bind(this);
   }
 
@@ -27,12 +31,14 @@ class Login extends Component {
   }
 
   handleClick() {
-    <p>carregando...</p>;
-    createUser();
+    const { inputValue } = this.state;
+    this.setState({ chamaApi: true, logado: true });
+    createUser({ name: inputValue });
+    this.setState({ chamaApi: false });
   }
 
   render() {
-    const { isButtonDisable, inputValue } = this.state;
+    const { isButtonDisable, inputValue, chamaApi, logado } = this.state;
     console.log(inputValue);
     return (
       <div data-testid="page-login">
@@ -56,6 +62,9 @@ class Login extends Component {
             Entrar
           </button>
         </form>
+        {chamaApi && <p>Carregando...</p>}
+        <Route exact path="/" />
+        {logado && <Redirect to="/Search" /> }
       </div>
     );
   }
